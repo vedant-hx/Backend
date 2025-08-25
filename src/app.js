@@ -1,5 +1,5 @@
 import express from "express";
-import CookieParser from "cookieparser";
+import cookieParser from "cookie-parser";
 import cors from "cors";
 
 const app = express()
@@ -18,8 +18,14 @@ app.use(express.urlencoded({
 }))
 // for url purpose search = + in the url
 
-app.use( CookieParser() )   //to safely access the cookies of the user
+app.use( cookieParser() )   //to safely access the cookies of the user
 app.use( express.static("public")) // to keep the files recieved from the user
 
+
+// routes import
+import userRouter from "./routes/user.routes.js"
+
+//routes declaration
+app.use("/api/v1/users", userRouter) //mention if ur using api
 export { app }
 
