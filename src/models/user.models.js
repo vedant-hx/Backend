@@ -1,6 +1,6 @@
 import mongoose, { Schema, SchemaType } from "mongoose";
 import bcrypt from "bcrypt";
-import { JsonWebTokenError } from "jsonwebtoken";
+import  JsonWebTokenError  from "jsonwebtoken";
 
 const userSchema = new mongoose.Schema(
     {
@@ -19,7 +19,7 @@ const userSchema = new mongoose.Schema(
             lowercase: true,
             trim: true
          },
-         fullname: {
+         fullName: {
             type: String,
             required: true,
             trim: true,
