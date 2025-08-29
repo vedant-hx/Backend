@@ -14,7 +14,8 @@ app.use(express.json({
 }))
 
 app.use(express.urlencoded({
-    limit: "16kb"
+    limit: "16kb",
+    extended: true
 }))
 // for url purpose search = + in the url
 
